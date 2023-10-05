@@ -29,6 +29,7 @@ class Home extends CI_Controller
 
             $this->load->view('templates/templates-user/footer', $data);
         }
+        //membuat home.php
     }
     public function detailBuku()
     {
