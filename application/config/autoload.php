@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 | In order to keep the framework as light-weight as possible only the
 | absolute minimal resources are loaded by default. For example,
-| the database is not connected to automatically since no assumption
+| the database is not connected to matically since no assumption
 | is made regarding whether you intend to use it.  This file lets
 | you globally define which systems you would like loaded with every
 | request.
@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Instructions
 | -------------------------------------------------------------------
 |
-| These are the things you can load automatically:
+| These are the things you can load matically:
 |
 | 1. Packages
 | 2. Libraries
@@ -36,7 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | -------------------------------------------------------------------
 | Prototype:
 |
-|  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
+|  $load['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
 $autoload['packages'] = array();
@@ -51,12 +51,12 @@ $autoload['packages'] = array();
 |
 | Prototype:
 |
-|	$autoload['libraries'] = array('database', 'email', 'session');
+|	$load['libraries'] = array('database', 'email', 'session');
 |
 | You can also supply an alternative library name to be assigned
 | in the controller:
 |
-|	$autoload['libraries'] = array('user_agent' => 'ua');
+|	$load['libraries'] = array('user_agent' => 'ua');
 */
 $autoload['libraries'] = array('form_validation', 'session', 'database');
 
@@ -71,12 +71,12 @@ $autoload['libraries'] = array('form_validation', 'session', 'database');
 |
 | Prototype:
 |
-|	$autoload['drivers'] = array('cache');
+|	$load['drivers'] = array('cache');
 |
 | You can also supply an alternative property name to be assigned in
 | the controller:
 |
-|	$autoload['drivers'] = array('cache' => 'cch');
+|	$load['drivers'] = array('cache' => 'cch');
 |
 */
 $autoload['drivers'] = array();
@@ -87,7 +87,7 @@ $autoload['drivers'] = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['helper'] = array('url', 'file');
+|	$load['helper'] = array('url', 'file');
 */
 $autoload['helper'] = array('url', 'file', 'pustaka');
 
@@ -97,7 +97,7 @@ $autoload['helper'] = array('url', 'file', 'pustaka');
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['config'] = array('config1', 'config2');
+|	$load['config'] = array('config1', 'config2');
 |
 | NOTE: This item is intended for use ONLY if you have created custom
 | config files.  Otherwise, leave it blank.
@@ -111,7 +111,7 @@ $autoload['config'] = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['language'] = array('lang1', 'lang2');
+|	$load['language'] = array('lang1', 'lang2');
 |
 | NOTE: Do not include the "_lang" part of your file.  For example
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
@@ -125,11 +125,11 @@ $autoload['language'] = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['model'] = array('first_model', 'second_model');
+|	$load['model'] = array('first_model', 'second_model');
 |
 | You can also supply an alternative model name to be assigned
 | in the controller:
 |
-|	$autoload['model'] = array('first_model' => 'first');
+|	$load['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('ModelUser', 'ModelBuku');
+$autoload['model'] = array('ModelUser', 'ModelBuku', 'ModelBooking', 'ModelPinjam');
