@@ -27,4 +27,3 @@ ext-white"><i class="fas fa-user-edit"></i> Ubah Profil</a>
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
-/** membuat fungsi MyProfil */

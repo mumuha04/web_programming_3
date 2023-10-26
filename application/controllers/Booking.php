@@ -36,7 +36,7 @@ class Booking extends CI_Controller
         $this->load->view('templates/templates-user/modal');
         $this->load->view('templates/templates-user/footer');
     }
-    public function tambahBooking()
+    public function ()
     {
         $id_buku = $this->uri->segment(3);
         //memilih data buku yang untuk dimasukkan ke tabel temp/keranjang melalui variabel $isi
@@ -80,5 +80,19 @@ class Booking extends CI_Controller
         //pesan ketika berhasil memasukkan buku ke keranjang
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Buku berhasil ditambahkan ke keranjang </div>');
         redirect(base_url() . 'home');
+    }
+    public function hapusbooking()
+    {
+        $id_buku = $this->uri->segment(3);
+        $id_user = $this->session->userdata('id_user');
+
+        $this->ModelBooking->deleteData(['id_buku' => $id_buku], 'temp');
+        $kosong = $this->db->query("select*from temp where id_user='$id_user'")->num_rows();
+        if ($kosong < 1) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-massege alert-danger" role="alert">Tidak Ada Buku dikeranjang</div>');
+            redirect(base_url());
+        } else {
+            redirect(base_url() . 'booking');
+        }
     }
 }
